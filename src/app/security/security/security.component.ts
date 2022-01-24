@@ -64,11 +64,11 @@ export class SecurityComponent implements OnInit {
         localStorage.setItem('token', result.accessToken);
         localStorage.setItem('gebruikerId', result.user.gebruikerId.toString());
         localStorage.setItem('email', result.user.email);
-        this.router.navigate(['']);
+        this.router.navigate(['/']);
       }, error => {
         this.errorMessage = 'Email/password not correct!';
         this.isSubmitted = false;
-        // this.router.navigate(['/']);
+        this.router.navigate(['/']);
       });
     } else {
       alert('work in progress');
