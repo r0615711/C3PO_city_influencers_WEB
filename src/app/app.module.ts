@@ -13,21 +13,30 @@ import {SharedModule} from './shared/shared.module';
 import {AdminModule} from './admin/admin.module';
 
 import { HttpClientModule } from '@angular/common/http';
-// import { LocationComponent } from './location/location.component';
-
-import { SecurityModule } from './security/security.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SecurityModule } from './security/security.module';
 import { SecurityComponent } from './security/security/security.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { NgChartsModule } from 'ng2-charts';
+import { LocationComponent } from './location/location.component';
+import { SocialMediaPlatformComponent } from './social-media-platform/social-media-platform.component';
+import { DomainComponent } from './domain/domain.component';
+import { UserPersonalComponent } from './user-personal/user-personal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenuComponent,
-    // LocationComponent,
+    DashboardComponent,
+    LocationComponent,
+    SocialMediaPlatformComponent,
+    DomainComponent,
+    UserPersonalComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -37,6 +46,7 @@ import { SecurityComponent } from './security/security/security.component';
     ChampaingModule,
     InfluencerModule,
     SharedModule,
+    NgChartsModule,
     // AdminModule,
 
     FormsModule,
@@ -44,11 +54,11 @@ import { SecurityComponent } from './security/security/security.component';
 
 
     SecurityModule,
-    AdminModule,
-    SecurityModule
-
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    LocationComponent
+  ]
 })
 export class AppModule { }

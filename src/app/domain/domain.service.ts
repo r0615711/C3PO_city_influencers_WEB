@@ -1,4 +1,4 @@
-import { Location } from './location';
+import { Domain } from './domain';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LocationService {
+export class DomainService {
 
   constructor(private httpClient: HttpClient) { }
   rooturl: string = 'http://java-rest-api-c3po.westeurope.cloudapp.azure.com:8080/api/';
-  getLocations(): Observable<Location[]> {
-    return this.httpClient.get<Location[]>(this.rooturl + 'locations/');
+  getDomains(): Observable<Domain[]> {
+    return this.httpClient.get<Domain[]>(this.rooturl + 'domains/');
   }
 }

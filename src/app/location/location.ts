@@ -1,5 +1,5 @@
 export interface Location {
-  locationId: number,
-  name: string,
-  postalCode: string
+  location_id: number;
+  name: string;
+  postal_code: string;
 }

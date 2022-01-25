@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEvent} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {User} from '../admin/user/user';
 import {Observable} from 'rxjs';
-import {UserResponse} from './userResponse';
-
-import { UserService } from '../admin/user/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private httpClient: HttpClient, private userSrevice: UserService) {
+  constructor(private httpClient: HttpClient) {
   }
 
   getToken(): string {

@@ -3,7 +3,6 @@ import {User} from '../../admin/user/user';
 import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 
-
 @Component({
   selector: 'app-security',
   templateUrl: './security.component.html',
@@ -18,8 +17,7 @@ export class SecurityComponent implements OnInit {
     firstname: '',
     lastname: '',
     username: '',
-    birthdate: '',
-
+    birthdate: ''
   };
 
   isSubmitted: boolean = false;
@@ -58,44 +56,44 @@ export class SecurityComponent implements OnInit {
 
   onSubmit(): void {
 
-        //debug
-        //console.log("voor isLogin:" + this.user.username + " - " + this.user.password);
+    //debug
+    //console.log("voor isLogin:" + this.user.username + " - " + this.user.password);
 
-    this.isSubmitted = true;
+this.isSubmitted = true;
+
+//debug
+// alert("voor isLogin:" + this.user.username + " - " + this.user.password);
+
+if (this.isLogin) {
+  this.authService.authenticate(this.user.username, this.user.password)
+  .subscribe(result => {this.errorMessage = '';
 
     //debug
-    // alert("voor isLogin:" + this.user.username + " - " + this.user.password);
+    // alert("voor if (result == true):" + this.user.username + " - " + this.user.password);
 
-    if (this.isLogin) {
-      this.authService.authenticate(this.user.username, this.user.password)
-      .subscribe(result => {this.errorMessage = '';
+    if (result == true){
+      // save access token localstorage
+      localStorage.setItem('userName', this.user.username);
+      localStorage.setItem('password', this.user.password);
 
-        //debug
-        // alert("voor if (result == true):" + this.user.username + " - " + this.user.password);
+      //debug
+      // alert("na localStorage.setItem():" + this.user.username + " - " + this.user.password);
 
-        if (result == true){
-          // save access token localstorage
-          localStorage.setItem('userName', this.user.username);
-          localStorage.setItem('password', this.user.password);
-
-          //debug
-          // alert("na localStorage.setItem():" + this.user.username + " - " + this.user.password);
-
-          this.router.navigate(['/home']);
-        } else {
-          this.errorMessage = 'Email/password not correct!';
-          this.isSubmitted = false;
-        }
-      }
-      , error => {
-        this.errorMessage = 'Email/password not correct!';
-        this.isSubmitted = false;
-        alert("Error tijdens submit")
-        this.router.navigate(['']);
-      }
-      );
+      this.router.navigate(['/home']);
     } else {
-      alert('work in progress');
+      this.errorMessage = 'Email/password not correct!';
+      this.isSubmitted = false;
     }
   }
+  , error => {
+    this.errorMessage = 'Email/password not correct!';
+    this.isSubmitted = false;
+    alert("Error tijdens submit")
+    this.router.navigate(['']);
+  }
+  );
+} else {
+  alert('work in progress');
+}
+}
 }

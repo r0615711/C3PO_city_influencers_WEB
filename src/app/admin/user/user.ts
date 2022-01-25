@@ -1,4 +1,4 @@
-import { Location } from "../../location";
+import { Location } from "../../location/location";
 
 export interface User {
   userId: number,
@@ -12,4 +12,3 @@ export interface User {
   username: string,
   birthdate: string;
 }
-

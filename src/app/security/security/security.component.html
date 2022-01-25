@@ -1,4 +1,5 @@
 <div class="container">
+
   <h1>Login</h1>
 <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
   {{errorMessage}}
@@ -12,8 +13,6 @@
     <label for="password">Password</label>
     <input type="password" name="password" id="password" class="form-control" minlength="4" [(ngModel)]="user.password" required="">
   </div>
-  <input name="login" id="login" class="btn btn-block btn-primary mb-4" type="submit" value="Login" [disabled]="!authForm.form.valid || isSubmitted">
+  <input name="login" id="login" class="btn btn-block btn-primary mb-4" type="submit" value="Login" [disabled]="!authForm.form.valid">
 </form>
-
-
 </div>
