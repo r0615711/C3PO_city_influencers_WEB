@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "start npm run api && start ng serve -o --port 5878",
+    "start": "start ng serve -o --port 5878",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api": "json-server-auth --watch json-server-local\\db.json -r json-server-local\\routes.json",
     "compodoc": "npx compodoc -p tsconfig.doc.json"
   },
   "private": true,

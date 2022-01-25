@@ -13,6 +13,9 @@ import {SharedModule} from './shared/shared.module';
 import {AdminModule} from './admin/admin.module';
 
 import { HttpClientModule } from '@angular/common/http';
+// import { LocationComponent } from './location/location.component';
+
+import { SecurityModule } from './security/security.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,7 +27,7 @@ import { SecurityComponent } from './security/security/security.component';
     AppComponent,
     HomeComponent,
     MenuComponent,
-
+    // LocationComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,8 @@ import { SecurityComponent } from './security/security/security.component';
 
 
     SecurityModule,
+    AdminModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
