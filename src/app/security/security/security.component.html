@@ -1,5 +1,4 @@
 <div class="container">
-
   <h1>Login</h1>
 <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
   {{errorMessage}}
@@ -15,5 +14,6 @@
   </div>
   <input name="login" id="login" class="btn btn-block btn-primary mb-4" type="submit" value="Login" [disabled]="!authForm.form.valid || isSubmitted">
 </form>
+
 
 </div>

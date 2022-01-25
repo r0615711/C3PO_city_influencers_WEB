@@ -34,4 +34,7 @@ export class UserService {
     return this.httpClient.get<Boolean>("http://localhost:8053/users/login/?user_name=" + userName + "&password=" + password);
   }
 
+  checkCredentials(userName: string, password:string): Observable<Boolean>{
+    return this.httpClient.get<Boolean>("http://localhost:8053/users/login/?user_name=" + userName + "&password=" + password);
+  }
 }

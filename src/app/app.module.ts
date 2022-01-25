@@ -45,6 +45,7 @@ import { SecurityComponent } from './security/security/security.component';
 
     SecurityModule,
     AdminModule,
+    SecurityModule
 
   ],
   providers: [],

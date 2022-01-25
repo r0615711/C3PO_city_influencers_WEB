@@ -11,7 +11,6 @@ import { SecurityComponent } from './security/security/security.component';
 
 import { LocationListComponent } from './location/location-list/location-list.component';
 
-
 const routes: Routes = [
   { path: '', component: SecurityComponent },
   { path: 'home', component: HomeComponent },
